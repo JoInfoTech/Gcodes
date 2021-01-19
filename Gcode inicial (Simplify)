@@ -1,0 +1,11 @@
+M107
+M190 S[bed0_temperature] ; Temperatura da MESA
+G21 ; Seta medidas em mm
+G28 ; Homing
+M104 S[extruder0_temperature] ; Seta Temperatura do BICO
+M109 S[extruder0_temperature] ; Espera a temperatura do BICO
+G1 Y-3.0 F2000.0 ; Vai para zona de expurgo
+G92 E0.0 ; seta posição da extrusora em 0
+G1 X60.0 E9.0  F1000.0 ; Expurga
+G1 X100.0 E12.5 F1000.0 ; Expurga
+G92 E0.0 ; seta a posição da extrusora em 0
