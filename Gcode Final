@@ -1,0 +1,8 @@
+G91; Coordenadas relativas
+G1 F1800 E-3; Retrai o filamento
+G1 F3000 Z10; Levanta 10mm do Z
+G90; Volta da valores absolutos
+G1 X0 Y-190 F1000 ; Move o X para o lado e Ypara frente
+M104 S0 ; Desliga Extrusora
+M140 S0 ; Delsiga Mesa
+M84 ; Desliga motores
