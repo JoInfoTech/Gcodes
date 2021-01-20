@@ -3,6 +3,7 @@ M190 S{material_bed_temperature} ; Temperatura da MESA
 G21 ; Seta medidas em mm
 M104 S{material_print_temperature} ; Seta Temperatura do BICO
 G28 ; Homing
+G29 ; Nivelamento
 M109 S{material_print_temperature} ; Espera a temperatura do BICO
 G1 Y-3.0 F2000.0 ; Vai para zona de expurgo
 G92 E0.0 ; seta posição da extrusora em 0
