@@ -1,8 +1,9 @@
 M107
 M190 S[bed_temperature] ; Temperatura da MESA
 G21 ; Set mm units
-G28 ; home all axes
 M104 S[first_layer_temperature] ; Temperatura do BICO
+G28 ; Homing
+G29 ; Nivelamento
 M109 S[first_layer_temperature] ; espera a temperatura do BICO
 G1 Y-3.0 F2000.0 ; go outside print area
 G92 E0.0 ; seta posição da extrusora em 0
