@@ -1,12 +1,13 @@
-M107
-M190 S[bed_temperature] ; Temperatura da MESA
-G21 ; Set mm units
-M104 S[first_layer_temperature] ; Temperatura do BICO
-G28 ; Homing
-G29 ; Nivelamento
-M109 S[first_layer_temperature] ; espera a temperatura do BICO
-G1 Y-3.0 F2000.0 ; go outside print area
-G92 E0.0 ; seta posição da extrusora em 0
-G1 X60.0 E9.0  F1000.0 ; intro line
-G1 X100.0 E12.5 F1000.0 ; intro line
-G92 E0.0 ; seta a posição da extrusora em 0
+M107 ; desliga o blower
+M190 S[first_layer_bed_temperature] ; Aquece a mesa, temperatura configurada em "Config. de Filamento"
+G21 ; Unidade para Milímetros
+G28 ; Home de todos os eixos
+M104 S[first_layer_temperature] ; Inicia aquecimento do bico, temperatura configurada em "Config. de Filamento"
+G29 ; faz o Nivelamento Automático
+M109 S[first_layer_temperature] ; Aguarda a temperatura do bico ser atingida
+G1 X1 Y1 Z0.8 F1000; Leva o bico até o canto da mesa
+G92 E0.0 ; Zera a posição da Extrusora
+; Extruda e limpa o bico
+G1 X60.0 E9.0  F1000.0 ; Inicia a linha  
+G1 X100.0 E12.5 F1000.0 ; Termina a linha
+G92 E0.0 ; Zera a posição da extrusora 
