@@ -1,11 +1,11 @@
 M107
 M190 S{material_bed_temperature} ; Temperatura da MESA
 G21 ; Seta medidas em mm
-M104 S{material_print_temperature} ; Seta Temperatura do BICO
 G28 ; Homing
+M104 S{material_print_temperature} ; Seta Temperatura do BICO
 G29 ; Nivelamento
-M109 S{material_print_temperature} ; Espera a temperatura do BICO
-G1 Y-3.0 F2000.0 ; Vai para zona de expurgo
+M109 S{material_print_temperature} ; Aguarda a temperatura do bico ser atingida
+G1 X1 Y1 Z0.8 F2000; Leva o bico até o canto da mesa
 G92 E0.0 ; seta posição da extrusora em 0
 G1 X60.0 E9.0  F1000.0 ; Expurga
 G1 X100.0 E12.5 F1000.0 ; Expurga
